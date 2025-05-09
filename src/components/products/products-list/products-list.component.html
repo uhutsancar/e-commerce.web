@@ -1,0 +1,5 @@
+<div class="flex flex-row gap-8 min-h-full flex-wrap justify-center items-center">
+  @for (product of products(); track product.id) {
+    <app-product-card [product]="product" [priority]="$index < 5" />
+  }
+</div>

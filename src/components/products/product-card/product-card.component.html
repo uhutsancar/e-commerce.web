@@ -1,0 +1,71 @@
+<section class="products-section">
+<div class="border rounded-2xl shadow-lg p-4 bg-white max-w-xs transition-transform hover">
+  <!-- Product IMAGE -->
+  @defer ( hydrate on viewport) {
+    <img
+      [alt]="product().title"
+      [height]="256"
+      [ngSrc]="product().thumbnail"
+      [width]="256"
+      class="h-64 w-64 object-cover rounded-md mx-auto"
+      [priority]="priority()"
+    />
+  }
+    @placeholder {
+      <div class="animate-pulse bg-gray-200 h-64 w-full rounded-md"></div>
+    }
+  
+
+  <!-- Product Details -->
+  <div class="mt-4">
+    <a [routerLink]="[product().id]" class="text-lg font-semibold text-gray-800 line-clamp-1">{{ product().title }}</a>
+    <p class="text-sm text-gray-600 line-clamp-2">{{ product().description }}</p>
+    <p class="text-sm text-gray-500 mt-2"><strong>Category:</strong> {{ product().category }}</p>
+    <p class="text-sm text-gray-500"><strong>Brand:</strong> {{ product().brand }}</p>
+
+    <!-- Pricing Section -->
+    <div class="flex items-center gap-2 mt-2">
+      @if (product().discountPercentage > 0) {
+        <span class="text-gray-500 line-through">
+          ${{ product().price | number: '1.2-2' }}
+        </span>
+      }
+      <span class="text-xl font-bold text-green-600">
+        ${{ getDiscountedPrice() | number: '1.2-2' }}
+      </span>
+      @if (product().discountPercentage > 0) {
+        <span class="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-md">
+          -{{ product().discountPercentage | number: '1.0-2' }}%
+        </span>
+      }
+    </div>
+
+    <!-- Rating and Stock -->
+    <div class="flex items-center justify-between mt-2">
+      <span class="text-yellow-500 font-medium">
+        ★ {{ product().rating | number: '1.1-1' }}
+      </span>
+      <span
+        [class.bg-green-100]="product().stock > 10"
+        [class.bg-red-100]="product().stock === 0"
+        [class.bg-yellow-100]="product().stock > 0 && product().stock <= 10"
+        [class.text-green-700]="product().stock > 10"
+        [class.text-red-700]="product().stock === 0"
+        [class.text-yellow-700]="product().stock > 0 && product().stock <= 10"
+        class="text-sm font-semibold px-2 py-1 rounded-md"
+      >
+        {{ getStockStatus() }}
+      </span>
+    </div>
+
+    <!-- Shipping and Warranty -->
+    <p class="text-xs text-gray-500 mt-2">
+      <strong>Shipping:</strong> {{ product().shippingInformation }}
+    </p>
+    <p class="text-xs text-gray-500">
+      <strong>Warranty:</strong> {{ product().warrantyInformation }}
+    </p>
+  </div>
+</div>
+
+</section>
