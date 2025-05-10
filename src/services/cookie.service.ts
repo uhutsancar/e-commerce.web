@@ -67,7 +67,6 @@ export class CookieService {
     }
   }
 
-
   remove(name: string): void {
     try {
       this.validateCookie(name, '');
