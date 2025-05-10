@@ -2,7 +2,7 @@ import { ApplicationConfig, inject, provideAppInitializer, provideZoneChangeDete
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { pathInterceptor } from '../interceptors/path-interceptor';
 import { API_URL } from '../data-access/base-api';
@@ -27,6 +27,7 @@ export const appConfig: ApplicationConfig = {
       const authService = inject(AuthService);
       authService.init();
     }),
+       provideHttpClient(withFetch()),
     provideClientHydration(
       withEventReplay(),
       withHttpTransferCacheOptions({
