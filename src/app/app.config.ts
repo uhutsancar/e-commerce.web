@@ -30,7 +30,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(
       withEventReplay(),
       withHttpTransferCacheOptions({
-        includeRequestsWithAuthHeaders:ture
+        includeRequestsWithAuthHeaders:true,
       }
       )
     )
