@@ -27,13 +27,7 @@ export const appConfig: ApplicationConfig = {
       const authService = inject(AuthService);
       authService.init();
     }),
-    provideClientHydration(
-      withEventReplay(),
-      withHttpTransferCacheOptions({
-        includeRequestsWithAuthHeaders: true,
-      }
-      )
-    )
+
 
   ]
 };
