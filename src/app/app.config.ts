@@ -33,7 +33,7 @@ export const appConfig: ApplicationConfig = {
         includeRequestsWithAuthHeaders:true,
       }
       )
-    )
+    ), provideClientHydration(withEventReplay())
 
   ]
 };
