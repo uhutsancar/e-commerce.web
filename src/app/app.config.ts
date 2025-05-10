@@ -8,6 +8,7 @@ import { pathInterceptor } from '../interceptors/path-interceptor';
 import { API_URL } from '../data-access/base-api';
 import { tokenInterceptor } from '../interceptors/toke-interceptors';
 import { AuthService } from '../services/auth.service';
+import { provideClientHydration, withEventReplay, withHttpTransferCacheOptions } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
@@ -25,7 +26,14 @@ export const appConfig: ApplicationConfig = {
     provideAppInitializer(() => {
       const authService = inject(AuthService);
       authService.init();
-    })
+    }),
+    provideClientHydration(
+      withEventReplay(),
+      withHttpTransferCacheOptions({
+        includeRequestsWithAuthHeaders: true,
+      }
+      )
+    )
 
   ]
 };

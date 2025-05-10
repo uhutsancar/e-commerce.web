@@ -1,5 +1,6 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { User } from '../data-access/models/base-api.types';
+import { CookieService } from './cookie.service';
 
 
 
@@ -11,22 +12,23 @@ export class AuthService {
   isLoggedIn = computed(() => !!this.#user());
   accessToken = computed(() => this.#user()?.accessToken)
   user = this.#user.asReadonly();
+  #cookieService = inject(CookieService)
   setUser(user:User | null) {
  
  if(user) {
      this.#user.set(user);
- localStorage.setItem('user' , JSON.stringify(user))
+ this.#cookieService.set('user' , JSON.stringify(user))
  }
  else {
    this.#user.set(null);
- localStorage.removeItem('user')
+   this.#cookieService.remove('user')
 
  }
    
   }
 
 init() {
-  const user  = localStorage.getItem('user');
+  const user  =   this.#cookieService.get('user');
   if(user) {
     this.#user.set(JSON.parse(user))
   }
