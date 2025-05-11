@@ -1,7 +1,5 @@
 import { HttpHandlerFn, HttpRequest } from '@angular/common/http';
-
 import { inject } from '@angular/core';
-import { API_URL } from '../data-access/base-api';
 import { AuthService } from '../services/auth.service';
 
 

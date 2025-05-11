@@ -1,4 +1,4 @@
-import { Component, computed, inject, OnInit, resource } from '@angular/core';
+import { Component, computed, inject,  resource } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductshApi } from '../../../data-access/products.api';
 import { firstValueFrom } from 'rxjs';

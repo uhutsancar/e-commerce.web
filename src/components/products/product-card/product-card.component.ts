@@ -1,4 +1,4 @@
-import { Component, input, Pipe  } from '@angular/core';
+import { Component, input  } from '@angular/core';
 import { DecimalPipe, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../../data-access/models/product';
