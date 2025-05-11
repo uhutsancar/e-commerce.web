@@ -78,7 +78,7 @@
     }
 
     .categories-btn .new {
-      background-color: #f27a1a;
+      background-color: #2E7D32;
       color: #fff;
       padding: 2px 5px;
       border-radius: 10px;
@@ -114,7 +114,7 @@
 
     .dropdown-column h4 {
       margin-bottom: 10px;
-      color: #f27a1a;
+      color: #2E7D32;
       font-size: 14px;
       white-space: nowrap;
     }
@@ -135,7 +135,7 @@
     }
 
     .dropdown-column ul li a:hover {
-      color: #f27a1a;
+      color: #2E7D32;
     }
 
     /* Responsive Design */
