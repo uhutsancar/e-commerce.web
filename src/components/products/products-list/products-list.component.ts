@@ -1,4 +1,4 @@
-import { Component, computed, inject,  resource } from '@angular/core';
+import { Component, computed, inject,  Input,  resource } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductshApi } from '../../../data-access/products.api';
 import { firstValueFrom } from 'rxjs';
@@ -9,6 +9,8 @@ import { firstValueFrom } from 'rxjs';
   imports: [ProductCardComponent],
 })
 export class ProductsListComponent  {
+
+  @Input() class = ''; // dışarıdan class alır
 
   #productsApi = inject(ProductshApi)
 #productsResource = resource({

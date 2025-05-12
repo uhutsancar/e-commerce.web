@@ -1,3 +1,103 @@
-<p>
-  home works!
-</p>
+
+<div class="flex justify-center">
+  <div class="w-[1400px] flex">
+    <!-- Left Sidebar (25%) -->
+    <div class="w-1/4 p-4 bg-gray-100 border-r border-gray-200">
+      <h2 class="text-lg font-semibold mb-4">İlgili Kategoriler</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="text-blue-600 hover:underline">Ten Makyajı</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Dudak Makyajı</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Göz Makyajı</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Makyaj Aksesuarları</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Makyaj Seti</a></li>
+      </ul>
+
+      <h2 class="text-lg font-semibold mt-6 mb-4">Marka</h2>
+      <div class="space-y-2">
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>KIKO</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>MAYBELLINE NEW YORK</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>L'OREAL PARIS</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>NYX PROFESSIONAL MAKEUP</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Flormar</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Sephora</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>MAC</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Pastel</span>
+        </label>
+      </div>
+
+      <h2 class="text-lg font-semibold mt-6 mb-4">Avantajlı Ürünler</h2>
+      <div class="space-y-2">
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Süper Avantajlı Ürün</span>
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Çok Avantajlı Ürün</span>
+        </label>
+      </div>
+
+      <h2 class="text-lg font-semibold mt-6 mb-4">Fiyat</h2>
+      <input type="range" min="0" max="1000" value="500" class="w-full">
+      
+      <h2 class="text-lg font-semibold mt-6 mb-4">Renk</h2>
+      <div class="space-y-2">
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Siyah</span>
+        </label>
+      </div>
+
+      <h2 class="text-lg font-semibold mt-6 mb-4">Form</h2>
+      <div class="space-y-2">
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Suya/Tere Dayanıklılık</span>
+        </label>
+      </div>
+
+      <h2 class="text-lg font-semibold mt-6 mb-4">Boy</h2>
+      <div class="space-y-2">
+        <label class="flex items-center">
+          <input type="checkbox" class="mr-2">
+          <span>Normal</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Right Section (75%) -->
+    <div class="w-3/4 p-4"  style="margin-left: 20px;">
+      <section class="products-section ">
+<app-products-list class=""></app-products-list>
+
+</section>
+
+    </div>
+
+
+
+  </div>
+</div>

@@ -8,12 +8,13 @@ import { ProductshApi } from '../data-access/products.api';
 export const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: HomeComponent,
+       providers: [ProductshApi],
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    canMatch: [authGuard],
+    path: 'login',
+    component: LoginComponent,
+
   },
   {
     path: 'products',
@@ -24,7 +25,7 @@ export const routes: Routes = [
   },
  {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'login',
     pathMatch: 'full'
  }
 ];
