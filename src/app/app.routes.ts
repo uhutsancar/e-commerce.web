@@ -23,9 +23,9 @@ export const routes: Routes = [
     providers: [ProductshApi],
 
   },
- {
-    path: '**',
-    redirectTo: 'login',
-    pathMatch: 'full'
- }
+//  {
+//     path: '**',
+//     redirectTo: 'login',
+//     pathMatch: 'full'
+//  }
 ];

@@ -62,6 +62,7 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+              
             }
           },
           "defaultConfiguration": "production"
@@ -73,7 +74,8 @@
               "buildTarget": "e-commerce:build:production"
             },
             "development": {
-              "buildTarget": "e-commerce:build:development"
+              "buildTarget": "e-commerce:build:development",
+               "hmr": false 
             }
           },
           "defaultConfiguration": "development"

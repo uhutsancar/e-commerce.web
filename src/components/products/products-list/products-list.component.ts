@@ -1,4 +1,4 @@
-import { Component, computed, inject,  Input,  resource } from '@angular/core';
+import { Component, computed, inject, Input, resource } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductshApi } from '../../../data-access/products.api';
 import { firstValueFrom } from 'rxjs';
@@ -8,14 +8,11 @@ import { firstValueFrom } from 'rxjs';
   templateUrl: './products-list.component.html',
   imports: [ProductCardComponent],
 })
-export class ProductsListComponent  {
+export class ProductsListComponent {
+  #productsApi = inject(ProductshApi);
+  #productsResource = resource({
+    loader: () => firstValueFrom(this.#productsApi.getProducts()),
+  });
 
-  @Input() class = ''; // dışarıdan class alır
-
-  #productsApi = inject(ProductshApi)
-#productsResource = resource({
-  loader: () => firstValueFrom(this.#productsApi.getProducts())
-})
-
-products = computed(() => this.#productsResource.value());
+  products = computed(() => this.#productsResource.value());
 }

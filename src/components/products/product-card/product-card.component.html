@@ -1,7 +1,10 @@
 <section class="products-section">
 <div class="border rounded-2xl shadow-lg p-4 bg-white max-w-xs transition-transform hover">
   <!-- Product IMAGE -->
-  @defer ( hydrate on viewport) {
+
+
+
+  <!-- @defer ( hydrate on viewport) { -->
     <img
       [alt]="product().title"
       [height]="256"
@@ -10,10 +13,10 @@
       class="h-64 w-64 object-cover rounded-md mx-auto"
       [priority]="priority()"
     />
-  }
-    @placeholder {
+  <!-- } -->
+    <!-- @placeholder {
       <div class="animate-pulse bg-gray-200 h-64 w-full rounded-md"></div>
-    }
+    } -->
   
 
   <!-- Product Details -->

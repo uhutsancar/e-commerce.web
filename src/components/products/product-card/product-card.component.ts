@@ -1,7 +1,8 @@
-import { Component, input  } from '@angular/core';
-import { DecimalPipe, NgOptimizedImage } from '@angular/common';
+import { Component, Inject, input, PLATFORM_ID  } from '@angular/core';
+import { DecimalPipe, isPlatformBrowser, NgIf, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../../data-access/models/product';
+
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Product } from '../../../data-access/models/product';
   standalone: true,
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css'],
-  imports: [DecimalPipe, RouterLink, NgOptimizedImage],
+  imports: [DecimalPipe, RouterLink,  NgOptimizedImage] ,
 })
 export class ProductCardComponent {
    product = input.required<Product>();
