@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-       providers: [ProductshApi],
+      //  providers: [ProductshApi],
   },
   {
     path: 'login',
