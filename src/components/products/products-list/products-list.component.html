@@ -1,4 +1,4 @@
-<div class="flex flex-row gap-4 min-h-full flex-wrap justify-center items-center ">
+<div class="flex flex-row gap-4 min-h-full flex-wrap justify-center items-center " style="width: 100%; max-width: 1400px; margin: 0 auto;">
   @for (product of products(); track product.id) {
     <app-product-card [product]="product" [priority]="$index < 5" />
   }
