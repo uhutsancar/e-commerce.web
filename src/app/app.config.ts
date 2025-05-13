@@ -8,7 +8,7 @@ import { pathInterceptor } from '../interceptors/path-interceptor';
 import { API_URL } from '../data-access/base-api';
 import { tokenInterceptor } from '../interceptors/toke-interceptors';
 import { AuthService } from '../services/auth.service';
-import { provideClientHydration, withEventReplay, withHttpTransferCacheOptions } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay, withHttpTransferCacheOptions, withIncrementalHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
@@ -29,12 +29,12 @@ export const appConfig: ApplicationConfig = {
     }),
        provideHttpClient(withFetch()),
     provideClientHydration(
-      withEventReplay(),
+      withIncrementalHydration(),
       withHttpTransferCacheOptions({
         includeRequestsWithAuthHeaders:true,
       }
       )
-    ), provideClientHydration(withEventReplay())
+    ), 
 
   ]
 };
